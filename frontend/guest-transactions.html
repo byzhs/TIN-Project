@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Transactions</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #eaf2f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #f9f9fb;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #003d5c;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    #goBackButton {
+      background-color: #d9534f;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    #goBackButton:hover {
+      background-color: #c43c37;
+    }
+
+    h2 {
+      border-bottom: 2px solid #d6e3ea;
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      background-color: #f1f7fa;
+      border: 1px solid #d6e3ea;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    ul li button {
+      background-color: #f4f4f4;
+      color: #003d5c;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 7px 15px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    ul li button:hover {
+      background-color: #0077a3;
+      color: white;
+      border-color: #0077a3;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    form label {
+      font-size: 14px;
+      color: #555;
+      margin-right: 10px;
+    }
+
+    form input,
+    form select,
+    form button {
+      padding: 12px;
+      margin-right: 12px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    form input:focus,
+    form select:focus {
+      outline: none;
+      border-color: #0077a3;
+      box-shadow: 0 0 5px rgba(0, 119, 163, 0.5);
+    }
+
+    form button {
+      background-color: #0077a3;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #005880;
+    }
+  </style>
+
+</head>
+<body>
+
+<div class="container">
+  <button id="goBackButton">Go Back</button>
+    <h1>Welcome, Guest</h1>
+      <h2>Your Transactions</h2>
+        <ul id="transactionsList"></ul>
+      <h2>Add Transaction</h2>
+        <form id="addTransactionForm">
+          <input type="hidden" id="transactionId" name="transactionId">
+            <label for="type">Type:</label>
+             <select id="type" name="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+               </select>
+            <label for="category">Category:</label>
+          <input type="text" id="category" name="category" required>
+            <label for="amount">Amount:</label>
+              <input type="number" id="amount" name="amount" required>
+            <label for="date">Date:</label>
+              <input type="date" id="date" name="date">
+  <button type="submit">Add Transaction</button>
+</form>
+
+</div>
+<script src="js/guest-transactions.js"></script>
+</body>
+
+</html>
